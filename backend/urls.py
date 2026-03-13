@@ -14,9 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
+#connecting todo url to backend url
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include        #include is used to include urls from other apps
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),    #connects the admin panel
+    path('', include('todo.urls')),     
 ]
